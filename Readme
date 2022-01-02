@@ -1,0 +1,7 @@
+This is a Lua interpreter applet for busybox,
+modified from official Lua interpreter,
+with corresponding Makefile.flags patch.
+
+Tested:
+lua: 5.4.3 5.4.2
+busybox: vanilla win32
