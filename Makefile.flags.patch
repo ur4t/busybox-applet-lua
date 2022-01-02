@@ -1,0 +1,24 @@
+--- Makefile.flags	2021-12-27 00:53:26.000000000 +0800
++++ Makefile.flags.lua	2022-01-02 18:31:48.120311272 +0800
+@@ -197,6 +197,21 @@
+ LDLIBS += dmalloc
+ endif
+ 
++# liblua needed for lua applet
++ifeq ($(CONFIG_LUA),y)
++ifneq ($(CONFIG_PLATFORM_MINGW32),y)
++LDLIBS += dl
++endif
++ifeq ($(CONFIG_LUA_SYSTEM_BUILD),y)
++LDLIBS += lua$(CONFIG_LUA_VERSION)
++CFLAGS += -I/usr/include/lua$(CONFIG_LUA_VERSION)
++else
++LDLIBS += lua
++CFLAGS += -I$(CONFIG_LUA_BUILD_PATH)
++LDFLAGS += -L$(CONFIG_LUA_BUILD_PATH)
++endif
++endif
++
+ # If a flat binary should be built, CFLAGS_busybox="-elf2flt"
+ # env var should be set for make invocation.
+ # Here we check whether CFLAGS_busybox indeed contains that flag.
