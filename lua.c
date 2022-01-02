@@ -36,17 +36,17 @@
 //config:	Lua interpreter for busybox.
 //config:
 //config:config	LUA_SYSTEM_BUILD
-//config:	bool "use system packaged liblua"
+//config:	bool "use system packaged lua"
 //config:	default y
 //config:	help
-//config:	Lua interpreter for busybox.
+//config:	Whether to use system packaged lua.
 //config:
 //config:config	LUA_VERSION
-//config:	string "liblua version"
+//config:	string "lua version for system packaged lua"
 //config:	default "5.4"
 //config:	depends on LUA_SYSTEM_BUILD
 //config:	help
-//config:	Sets version of system packaged liblua. The default is "5.4".
+//config:	Sets version of system packaged lua. The default is "5.4".
 //config:
 //config:config	LUA_BUILD_PATH
 //config:	string "lua build path"
