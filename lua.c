@@ -89,17 +89,18 @@
 
 //kbuild:lib-$(CONFIG_LUA) += lua.o
 
-//usage:#define lua_trivial_usage "[options] [script [args]]"
+//usage:#define lua_trivial_usage "[-ivEW] [-e STAT] [-l NAME] [SCRIPT [ARGS]]"
 //usage:
 //usage:#define lua_full_usage "\n\n"
-//usage:	"	-e stat  execute string 'stat'\n"
-//usage:	"	-i       enter interactive mode after executing 'script'\n"
-//usage:	"	-l name  require library 'name' into global 'name'\n"
-//usage:	"	-v       show version information\n"
-//usage:	"	-E       ignore environment variables\n"
-//usage:	"	-W       turn warnings on\n"
-//usage:	"	--       stop handling options\n"
-//usage:	"	-        stop handling options and execute stdin\n"
+//usage:	"Lua interpreter\n"
+//usage:	"\n	-e STAT	execute string 'STAT'"
+//usage:	"\n	-i	enter interactive mode after executing 'SCRIPT'"
+//usage:	"\n	-l NAME	require library 'NAME' into global 'NAME'"
+//usage:	"\n	-v	show version information"
+//usage:	"\n	-E	ignore environment variables"
+//usage:	"\n	-W	turn warnings on"
+//usage:	"\n	--	stop handling options"
+//usage:	"\n	-	stop handling options and execute stdin"
 
 #include <lua.h>
 #include <lualib.h>
